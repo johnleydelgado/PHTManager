@@ -66,7 +66,10 @@
     if(timer){
         [timer invalidate];
         timer = nil;
-       pausedTime = 0.0;
+        pausedTime = 0.0;
+    }
+    else{
+        pausedTime = 0.0;
     }
 }
 -(void) newTimer {

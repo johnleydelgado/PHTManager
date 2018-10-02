@@ -45,6 +45,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D7609E021631C54006B3E34 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3D7609E121631C57006B3E34 /* Controller2 */ = {
+			isa = PBXGroup;
+			children = (
+				3DA885C321625BCD002F9D11 /* ViewController.h */,
+				3DA885DB216291AF002F9D11 /* Timer.h */,
+				3DA885D921629189002F9D11 /* Timer.m */,
+			);
+			path = Controller2;
+			sourceTree = "<group>";
+		};
+		3D7609E221631C59006B3E34 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3DA885C421625BCD002F9D11 /* ViewController.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3DA885B421625BCD002F9D11 = {
 			isa = PBXGroup;
 			children = (
@@ -64,10 +89,11 @@
 		3DA885BF21625BCD002F9D11 /* PHTManager */ = {
 			isa = PBXGroup;
 			children = (
+				3D7609E221631C59006B3E34 /* View */,
+				3D7609E121631C57006B3E34 /* Controller2 */,
+				3D7609E021631C54006B3E34 /* Model */,
 				3DA885C021625BCD002F9D11 /* AppDelegate.h */,
 				3DA885C121625BCD002F9D11 /* AppDelegate.m */,
-				3DA885C321625BCD002F9D11 /* ViewController.h */,
-				3DA885C421625BCD002F9D11 /* ViewController.m */,
 				3DA885C621625BCD002F9D11 /* Main.storyboard */,
 				3DA885C921625BD0002F9D11 /* Assets.xcassets */,
 				3DA885CB21625BD0002F9D11 /* LaunchScreen.storyboard */,
@@ -75,8 +101,6 @@
 				3DA885CF21625BD0002F9D11 /* main.m */,
 				3DA885D621625BE5002F9D11 /* PHTManager.h */,
 				3DA885D721625BF3002F9D11 /* PHTManager.m */,
-				3DA885D921629189002F9D11 /* Timer.m */,
-				3DA885DB216291AF002F9D11 /* Timer.h */,
 			);
 			path = PHTManager;
 			sourceTree = "<group>";
