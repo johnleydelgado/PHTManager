@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D7609E921631FFC006B3E34 /* QuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7609E521631FFC006B3E34 /* QuestionViewController.m */; };
+		3D7609EA21631FFC006B3E34 /* GeneralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D7609E621631FFC006B3E34 /* GeneralManager.m */; };
 		3DA885C221625BCD002F9D11 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA885C121625BCD002F9D11 /* AppDelegate.m */; };
 		3DA885C521625BCD002F9D11 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA885C421625BCD002F9D11 /* ViewController.m */; };
 		3DA885C821625BCD002F9D11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DA885C621625BCD002F9D11 /* Main.storyboard */; };
@@ -18,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D7609E521631FFC006B3E34 /* QuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuestionViewController.m; path = PHTManager/Question/QuestionViewController.m; sourceTree = SOURCE_ROOT; };
+		3D7609E621631FFC006B3E34 /* GeneralManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GeneralManager.m; path = PHTManager/Question/GeneralManager.m; sourceTree = SOURCE_ROOT; };
+		3D7609E721631FFC006B3E34 /* GeneralManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GeneralManager.h; path = PHTManager/Question/GeneralManager.h; sourceTree = SOURCE_ROOT; };
+		3D7609E821631FFC006B3E34 /* QuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuestionViewController.h; path = PHTManager/Question/QuestionViewController.h; sourceTree = SOURCE_ROOT; };
 		3DA885BD21625BCD002F9D11 /* PHTManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PHTManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DA885C021625BCD002F9D11 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3DA885C121625BCD002F9D11 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -70,6 +76,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		3D7609E421631F87006B3E34 /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				3D7609E721631FFC006B3E34 /* GeneralManager.h */,
+				3D7609E621631FFC006B3E34 /* GeneralManager.m */,
+				3D7609E821631FFC006B3E34 /* QuestionViewController.h */,
+				3D7609E521631FFC006B3E34 /* QuestionViewController.m */,
+			);
+			name = Question;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		3DA885B421625BCD002F9D11 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +107,7 @@
 		3DA885BF21625BCD002F9D11 /* PHTManager */ = {
 			isa = PBXGroup;
 			children = (
+				3D7609E421631F87006B3E34 /* Question */,
 				3D7609E221631C59006B3E34 /* View */,
 				3D7609E121631C57006B3E34 /* Controller2 */,
 				3D7609E021631C54006B3E34 /* Model */,
@@ -175,8 +194,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D7609E921631FFC006B3E34 /* QuestionViewController.m in Sources */,
 				3DA885C521625BCD002F9D11 /* ViewController.m in Sources */,
 				3DA885D021625BD0002F9D11 /* main.m in Sources */,
+				3D7609EA21631FFC006B3E34 /* GeneralManager.m in Sources */,
 				3DA885D821625BF3002F9D11 /* PHTManager.m in Sources */,
 				3DA885DA21629189002F9D11 /* Timer.m in Sources */,
 				3DA885C221625BCD002F9D11 /* AppDelegate.m in Sources */,
