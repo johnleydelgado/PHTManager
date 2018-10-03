@@ -8,9 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QuestionViewController : UIViewController
+@interface QuestionViewController : UIViewController {
+    
+    int wrongAnswerCount;
+    int currentQuestion;
+}
+
+@property (nonatomic,strong) NSArray *correctAnswer;
+@property (nonatomic,strong) NSArray *question;
+
+@property (nonatomic,strong) NSString *userInput;
 
 
+//- (void) Answering : (NSString *)answer;
+- (void) CheckingAnswer : (NSString*)theAnswer;
+- (void) Question:(NSInteger)numberOfCurrentAnswer;
+- (void) GetTheNumberOfWrongAnswer: (NSInteger)wrongAnswer;
+- (void) ShowAlert : (NSInteger)currentQuestion;
 
 @end
 
