@@ -16,7 +16,7 @@
 		3DA885CD21625BD0002F9D11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DA885CB21625BD0002F9D11 /* LaunchScreen.storyboard */; };
 		3DA885D021625BD0002F9D11 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA885CF21625BD0002F9D11 /* main.m */; };
 		3DA885D821625BF3002F9D11 /* PHTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA885D721625BF3002F9D11 /* PHTManager.m */; };
-		3DA885DA21629189002F9D11 /* Timer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA885D921629189002F9D11 /* Timer.m */; };
+		3DA885DA21629189002F9D11 /* PRTTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DA885D921629189002F9D11 /* PRTTimer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +36,8 @@
 		3DA885CF21625BD0002F9D11 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3DA885D621625BE5002F9D11 /* PHTManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHTManager.h; sourceTree = "<group>"; };
 		3DA885D721625BF3002F9D11 /* PHTManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PHTManager.m; sourceTree = "<group>"; };
-		3DA885D921629189002F9D11 /* Timer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Timer.m; sourceTree = "<group>"; };
-		3DA885DB216291AF002F9D11 /* Timer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
+		3DA885D921629189002F9D11 /* PRTTimer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PRTTimer.m; sourceTree = "<group>"; };
+		3DA885DB216291AF002F9D11 /* PRTTimer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PRTTimer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +62,8 @@
 			isa = PBXGroup;
 			children = (
 				3DA885C321625BCD002F9D11 /* ViewController.h */,
-				3DA885DB216291AF002F9D11 /* Timer.h */,
-				3DA885D921629189002F9D11 /* Timer.m */,
+				3DA885DB216291AF002F9D11 /* PRTTimer.h */,
+				3DA885D921629189002F9D11 /* PRTTimer.m */,
 				3D7609EE2163506D006B3E34 /* PRTGeneralAnalyticsManager.h */,
 				3D7609EC216324B8006B3E34 /* PRTGeneralAnalyticsManager.m */,
 			);
@@ -198,7 +198,7 @@
 				3DA885C521625BCD002F9D11 /* ViewController.m in Sources */,
 				3DA885D021625BD0002F9D11 /* main.m in Sources */,
 				3DA885D821625BF3002F9D11 /* PHTManager.m in Sources */,
-				3DA885DA21629189002F9D11 /* Timer.m in Sources */,
+				3DA885DA21629189002F9D11 /* PRTTimer.m in Sources */,
 				3D7609ED216324B9006B3E34 /* PRTGeneralAnalyticsManager.m in Sources */,
 				3DA885C221625BCD002F9D11 /* AppDelegate.m in Sources */,
 			);

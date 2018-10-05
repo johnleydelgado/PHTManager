@@ -10,7 +10,7 @@
 
 #import "PRTGeneralAnalyticsManager.h"
 
-#import "Timer.h"
+#import "PRTTimer.h"
 @interface QuestionViewController ()
 
 @end
@@ -19,8 +19,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    Timer *sharedManager = [Timer instance];
-    [sharedManager start];
+//    PRTTimer *sharedManager = [PRTTimer instance];
+//    [sharedManager start];
     [[PRTGeneralAnalyticsManager instance]setCount:@"Count" withCount:0];
     [self Question:0];
 
@@ -28,18 +28,18 @@
 
 - (void) Question:(NSInteger)numberOfCurrentQuestion{
     if (currentQuestion > 2){
-        [[Timer instance]stop];
+       
         [[PRTGeneralAnalyticsManager instance]getCount:@"Count"];
     }
     else{
         _question = @[@"what is the capital of the Philippines?", @"what are the sum of 1 and 2?", @"How many days of month in february in the year of 2016"];
-        
+        NSArray *timerKey = @[@"timer1",@"timer2",@"timer3"];
+        [[PRTGeneralAnalyticsManager instance]startTimer:timerKey[numberOfCurrentQuestion]];
         
         [self ShowAlert:numberOfCurrentQuestion];
     }
     
 }
-
 
 - (void) GetTheNumberOfWrongAnswer :(NSInteger)wrongAnswer{
     
@@ -53,19 +53,20 @@
     //NSString *currentQuestion = [@(_currentQuestion) stringValue];
     
     if( [_correctAnswer[currentQuestion]  isEqual: theAnswer]) {
-        
+        NSArray *timerKey = @[@"timer1",@"timer2",@"timer3"];
+        [[PRTGeneralAnalyticsManager instance]stopTimer:timerKey[currentQuestion]];
         [self GetTheNumberOfWrongAnswer: wrongAnswerCount];
         
         currentQuestion +=1;
        // wrongAnswerCount = 0;
         [self Question:currentQuestion];
+       
         
     }
     else{
         
       //  wrongAnswerCount +=1;
         [[PRTGeneralAnalyticsManager instance]increase:@"Count"];
-        
         [self GetTheNumberOfWrongAnswer: wrongAnswerCount];
         [self Question:currentQuestion];
         

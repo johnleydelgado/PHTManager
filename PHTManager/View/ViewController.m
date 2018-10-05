@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-#import "Timer.h"
+#import "PRTTimer.h"
 @interface ViewController ()
 
 @end
@@ -21,15 +21,16 @@
    
 }
 - (IBAction)startButton {
-    [[Timer instance]start];
+    [[PRTTimer instance]start];
 }
 - (IBAction)resetButton {
-    [[Timer instance] restart];
+    [[PRTTimer instance] restart];
+    
 }
 - (IBAction)pauseButton {
-    [[Timer instance] pause];
+    [[PRTTimer instance] pause];
 }
 - (IBAction)stopButton {
-    [[Timer instance] stop];
+    [[PRTTimer instance] stop];
 }
 @end

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "PRTGeneralAnalyticsManager.h"
-#import "Timer.h"
+#import "PRTTimer.h"
 @implementation PRTGeneralAnalyticsManager
 
 + (PRTGeneralAnalyticsManager *)instance{
@@ -19,6 +19,8 @@
         _sharedManager = [[self alloc]init];
         _sharedManager->countTracking = [[NSMutableDictionary alloc]init];
         _sharedManager->timeTracking = [[NSMutableDictionary alloc]init];
+        
+        
     });
     
     return _sharedManager;
@@ -28,11 +30,8 @@
 - (void)setCount:(NSString *)aCountKey withCount:(int)aCount{
     countTracking[aCountKey] = [NSNumber numberWithInt:aCount];
     NSString *countKey = countTracking[aCountKey];
-   
     if(countKey!=nil){
         // NSLog(@"set count is:%@",countKey);
-        [self getTimeElapsed:@"timer"];
-      
     }
 }
 
@@ -41,23 +40,22 @@
     
     NSString *countKey = countTracking[aCountKey];
     if(countKey!=nil){
-       // NSLog(@"the getCount is :%@",countKey);
+        // NSLog(@"the getCount is :%@",countKey);
     }
-
+    
     return [countKey intValue];
 }
 
 - (void)increase:(NSString *)aCountKey{
     NSString *countKey = countTracking[aCountKey];
-   
+    
     if(countKey!=nil){
         int count = [countKey intValue];
         count ++;
         [self setCount:aCountKey withCount:count];
-        
-       // NSLog(@"the wrong answer is :%d",count);
+        // NSLog(@"the wrong answer is :%d",count);
     }
-
+    
 }
 
 - (void)decrease:(NSString *)aCountKey{
@@ -73,49 +71,47 @@
 }
 
 - (void)startTimer:(NSString *)aTimeKey {
-    NSTimer *timer = timeTracking[aTimeKey];
-    if(timer!=nil){
-      //  NSLog(@"the timer started :%@",timer);
-    }
-
+    PRTTimer *timer = [[PRTTimer alloc] init];
+    [timer start];
+    timeTracking[aTimeKey] = timer;
+    [self getTimeElapsed:aTimeKey];
+  
 }
 
 - (void)stopTimer:(NSString *)aTimeKey {
-    NSTimer *timer = timeTracking[aTimeKey];
-    if(timer!=nil){
-     //   NSLog(@"the timer is stopped :%@",timer);
-    }
+    PRTTimer *stopTimer = timeTracking[aTimeKey];
+    [stopTimer stop];
 }
 
 - (void)restartTimer:(NSString *)aTimeKey {
-    NSTimer *timer = timeTracking[aTimeKey];
-    if(timer!=nil){
-       // NSLog(@"the timer is restarted :%@",timer);
-    }
+    PRTTimer *stopTimer = timeTracking[aTimeKey];
+    [stopTimer restart];
 }
 
 - (int)getTimeElapsed:(NSString *)aTimeKey {
-    int timeElapsed = [[Timer instance ] elapsedSeconds];
-    timeTracking[aTimeKey] = [NSNumber numberWithInt:timeElapsed];
-    NSTimer *timer = timeTracking[aTimeKey];
+    PRTTimer *timer = timeTracking[aTimeKey];
+    [self getTimerHasStarted:aTimeKey];
     if(timer!=nil){
-        //NSLog(@"the timer is :%@",timer);
-        [self getTimerHasStarted:@"timer"];
+        
+        return [timer elapsedSeconds];
     }
-    
-   return timeElapsed;
+    else{
+        return 0;
+    }
     
 }
 
 - (BOOL)getTimerHasStarted:(NSString *)aTimeKey {
     
-    NSNumber *timeHasStarted = timeTracking[aTimeKey];
-    if(timeHasStarted!=nil){
-        timeHasStarted = [NSNumber numberWithBool:YES];
-       // NSLog(@"Bool is : %@",timeHasStarted);
+    PRTTimer *timer = timeTracking[aTimeKey];
+    if(timer!=nil){
+        NSLog(@"True");
+        return true;
     }
-    return timeHasStarted;
-    
+    else{
+         NSLog(@"false");
+        return false;
+    }
 }
 
 

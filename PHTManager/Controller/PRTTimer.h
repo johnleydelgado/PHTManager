@@ -6,7 +6,7 @@
 //  Copyright © 2018 Rapha Solution. All rights reserved.
 //
 
-@interface Timer: NSObject
+@interface PRTTimer: NSObject
 {
     /*! @brief this will be the value of nstimer that ticks every seconds*/
     NSTimer *timer;
@@ -22,7 +22,7 @@
     NSDate *date;
 }
 /*! @brief instance of our class*/
-+(Timer *) instance;
++(PRTTimer *) instance;
 
 /*!
  @brief it will call the new timer function to starts the timer

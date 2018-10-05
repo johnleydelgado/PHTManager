@@ -7,24 +7,24 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Timer.h"
-
-@implementation Timer
+#import "PRTTimer.h"
+#import "PRTGeneralAnalyticsManager.h"
+@implementation PRTTimer
 /*  instantiate */
-+ (Timer *) instance {
++ (PRTTimer *) instance {
     static dispatch_once_t once;
-    static Timer *_sharedManager = nil;
+    static PRTTimer *_sharedManager = nil;
     
     dispatch_once(&once,^{
         _sharedManager = [[self alloc] init];
         _sharedManager->timer = [[NSTimer alloc] init];
-        _sharedManager->date = [[NSDate alloc]init];
+        _sharedManager->date = [[NSDate alloc] init];
     });
     
     return _sharedManager;
     
 }
-// start the timer
+// Start the timer
 - (void)start {
     if(timer){
         pausedTime += [[NSDate date] timeIntervalSinceDate:date];
@@ -34,7 +34,7 @@
     }
     [self newTimer];
 }
-//restart the timer
+//Restart the timer
 - (void)restart {
     
     if(timer){
@@ -52,7 +52,7 @@
     
 }
 
-//pause the timer
+//Pause the timer
 - (void)pause {
     if(timer){
         pausedTime += [[NSDate date] timeIntervalSinceDate:date];
@@ -65,7 +65,7 @@
     }
 }
 
-//stop the timer
+//Stop the timer
 - (void)stop {
     if(timer){
         [timer invalidate];
@@ -98,5 +98,6 @@
     int minutes = (elapsedTime - hours * 3600) / 60;
     NSString *timeStr = [NSString stringWithFormat:@"%i:%i:%.f", hours, minutes,elapsedTime];
     NSLog(@"%@",timeStr);
+     
 }
 @end
